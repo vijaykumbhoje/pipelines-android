@@ -34,6 +34,14 @@ steps:
     artifactType: 'container'
   displayName: Publish artifacts
 
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'keystore.jsk'
+    apksignerKeystorePassword: 'Test123+'
+    apksignerKeystoreAlias: 'keystore'
+    apksignerKeyPassword: 'Test123+'  
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -57,10 +65,3 @@ steps:
       $ANDROID_HOME/platform-tools/adb devices
       
       echo "Emulator started"
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'keystore.jsk'
-    apksignerKeystorePassword: 'Test123+'
-    apksignerKeystoreAlias: 'keystore'
-    apksignerKeyPassword: 'Test123+'
