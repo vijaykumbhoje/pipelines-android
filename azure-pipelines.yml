@@ -32,13 +32,3 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
-
-- task: AndroidSigning@2
-  inputs:
-    apkFiles: '**/*.apk'
-    jarsign: true
-    jarsignerKeystoreFile: 'keystore.jks'
-    jarsignerKeystorePassword: '$(jarsignerKeystorePassword)'
-    jarsignerKeystoreAlias: 'Sample-Pipeline'
-    jarsignerKeyPassword: '$(jarsignerKeyPassword)'
-    zipalign: true  
