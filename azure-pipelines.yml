@@ -37,8 +37,8 @@ steps:
   inputs:
     apkFiles: '**/*.apk'
     jarsign: true
-    jarsignerKeystoreFile: ''
+    jarsignerKeystoreFile: '$(Build.ArtifactStagingDirectory)'
     jarsignerKeystorePassword: '$(jarsignerKeystorePassword)'
-    jarsignerKeystoreAlias: 'yourKeystoreAlias'
+    jarsignerKeystoreAlias: 'Sample-Pipeline'
     jarsignerKeyPassword: '$(jarsignerKeyPassword)'
     zipalign: true  
